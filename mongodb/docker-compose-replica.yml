@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  mongodb-rs0:
+    image: mongo:8.0.4
+    container_name: mongodb-rs0
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/rs0:/data/db
+      - ./logs/rs0:/var/log/mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    command: mongod --replSet rs0 --auth --bind_ip_all
+    networks:
+      - mongo-network
+
+  mongodb-rs1:
+    image: mongo:8.0.4
+    container_name: mongodb-rs1
+    restart: always
+    ports:
+      - "27018:27017"
+    volumes:
+      - ./data/rs1:/data/db
+      - ./logs/rs1:/var/log/mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    command: mongod --replSet rs0 --auth --bind_ip_all
+    networks:
+      - mongo-network
+
+  mongodb-rs2:
+    image: mongo:8.0.4
+    container_name: mongodb-rs2
+    restart: always
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./data/rs2:/data/db
+      - ./logs/rs2:/var/log/mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    command: mongod --replSet rs0 --auth --bind_ip_all
+    networks:
+      - mongo-network
+
+networks:
+  mongo-network:
+    driver: bridge

@@ -1,3 +1,4 @@
 hadoop_and_hbase/data
 hadoop_and_hbase/logs
 *log.*
+mongodb/*.txt
