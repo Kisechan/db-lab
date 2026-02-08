@@ -1,4 +1,4 @@
-hadoop_and_hbase/data
-hadoop_and_hbase/logs
+**/data
+**/logs
 *log.*
 mongodb/*.txt

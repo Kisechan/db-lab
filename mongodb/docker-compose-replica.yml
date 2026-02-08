@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mongodb-rs0:
     image: mongo:8.0.4
