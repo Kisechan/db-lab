@@ -9,6 +9,8 @@ services:
       - "19888:19888"  # Hadoop HistoryServer
       - "16010:16010"  # HBase Master Web UI
       - "16030:16030"  # HBase RegionServer Web UI
+      - "16000:16000"  # HBase Master RPC
+      - "16020:16020"  # HBase RegionServer RPC
       - "2181:2181"    # ZooKeeper
       - "2222:22"      # SSH
     volumes:

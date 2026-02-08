@@ -25,12 +25,30 @@
         <name>hbase.wal.provider</name>
         <value>filesystem</value>
     </property>
+    <!-- Master 配置 -->
     <property>
         <name>hbase.master.info.port</name>
         <value>16010</value>
     </property>
     <property>
+        <name>hbase.master.port</name>
+        <value>16000</value>
+    </property>
+    <property>
+        <name>hbase.master.hostname</name>
+        <value>hadoop-hbase</value>
+    </property>
+    <!-- RegionServer 配置 -->
+    <property>
         <name>hbase.regionserver.info.port</name>
         <value>16030</value>
+    </property>
+    <property>
+        <name>hbase.regionserver.port</name>
+        <value>16020</value>
+    </property>
+    <property>
+        <name>hbase.regionserver.hostname</name>
+        <value>hadoop-hbase</value>
     </property>
 </configuration>
